@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.ak13</groupId>
+    <artifactId>math-util-mvn-sap1701</artifactId>
+    <version>6.8</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>19</maven.compiler.source>
+        <maven.compiler.target>19</maven.compiler.target>
+        <exec.mainClass>com.ak13.math.util.mvn.sap1701.MathUtilMvnSap1701</exec.mainClass>
+    </properties>
+    
+    <!--các thư viện mình cần cho app, gọi dependency thì khai báo ở đây
+    trong mục <denpencies> -->
+    <dependencies>
+        <dependency>
+            <groupId>com.microsoft.sqlserver</groupId>
+            <artifactId>mssql-jdbc</artifactId>
+            <version>12.3.0.jre20-preview</version>
+        </dependency>
+ 
+        
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.10.0</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>     
+    
+    <!--các thư viện mình cần cho riêng Maven để nó chạy ngầm một số
+    việc trong quá tình nó đóng goí  app cho mình
+    lên kho tổng lấy vào-->
+    <build>
+        <plugins>
+            
+            <plugin>              
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.4.0</version>              
+            </plugin>
+            
+            <plugin>               
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+            </plugin>
+            
+        </plugins> 
+    </build>   
+        
+</project>
