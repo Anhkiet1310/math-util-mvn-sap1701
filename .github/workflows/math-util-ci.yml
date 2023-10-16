@@ -1,0 +1,29 @@
+
+
+name: Math Utility Repo applying CI           # Tên của nhóm công việc cần làm khi ai đó cần push code
+
+on:
+  push:
+    branches: [ "main" ] #bất kì khi nào mà ai đó púh code lên main
+  pull_request:
+    branches: [ "main" ]
+
+jobs:  #thì làm các việc ở dưới đây
+  build:
+
+    runs-on: ubuntu-latest #1. mượn sever của mỹ, cài sẵn hệ điều hành Ubuntu
+
+    steps:                  #2. Làm thêm các bước sau trên sever vùa mượn
+    - uses: actions/checkout@v3 #2.1 lấy toàn bộ code từ kho chuyển sang sever
+    - name: Set up JDK 19        #2.2 mượn JDK nào đó trên sever
+      uses: actions/setup-java@v3
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Build with Maven   #2.3 chuẩn bị chạy lệnh build app, chạy Unit test
+      run: mvn -B package --file pom.xml
+
+    # # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
+    # - name: Update dependency graph
+    #   uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
