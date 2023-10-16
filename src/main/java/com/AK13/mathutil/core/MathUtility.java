@@ -31,7 +31,7 @@ public class MathUtility {
             return 1;
         
 
-        long result = 1; //n>=2-<=20
+        long result = 10; //n>=2-<=20
         
         for (int i = 2; i <= n; i++) 
             result *= i;
