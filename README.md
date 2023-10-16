@@ -1,3 +1,5 @@
+[![Math Utility Repo applying CI](https://github.com/Anhkiet1310/math-util-mvn-sap1701/actions/workflows/math-util-ci.yml/badge.svg)](https://github.com/Anhkiet1310/math-util-mvn-sap1701/actions/workflows/math-util-ci.yml)
+
 ### Welcome to to Math Utility Repository
 #### You will find in this repo the following stuff:
 * A Maven project to demonstrate the Math library
